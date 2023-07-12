@@ -1,0 +1,66 @@
+Q1. What is Abstraction in OOps? Explain with an example.
+Ans=A key idea in object-oriented programming (OOP) is abstraction, which entails streamlining large systems by concentrating on key components and hiding non-essential ones. In order to emphasize 
+what an entity does rather than how it does it, it enables us to design abstract representations of real-world entities as classes or objects.
+
+Abstract classes and interfaces are used in OOP to accomplish abstraction. A class that cannot be instantiated and acts as a template for derived classes is known as an abstract class. There may be one
+ or more abstract methods present in it; nevertheless, the abstract class itself does not contain any of them. The derived classes are in charge of implementing these methods.
+  for ex.
+	from abc import ABC, abstractmethod
+
+class Vehicle(ABC):
+    @abstractmethod
+    def start(self):
+        pass
+    
+    @abstractmethod
+    def stop(self):
+        pass
+
+Q2. Differentiate between Abstraction and Encapsulation. Explain with an example.
+Ans=Abstraction:
+
+Abstraction is the process of focusing on essential features while hiding unnecessary details.
+It emphasizes "what" an object does rather than "how" it does it.
+Abstraction is achieved through abstract classes and interfaces, which provide a common interface for a group of related classes.
+
+Encapsulation:
+
+The goal of encapsulation is to group similar information and actions into a single object (a class) and to limit access to the inner workings of that object 
+for ex.
+	from abc import ABC, abstractmethod
+
+class Animal(ABC):
+    def __init__(self, name):
+        self.name = name
+
+    @abstractmethod
+    def make_sound(self):
+        pass
+
+Q3.What is abc module in python? Why is it used?
+Ans=The ABC class is made available as the foundation class for defining abstract base classes by the ABC module. In order to define abstract methods within abstract base classes,
+it additionally offers the abstractmethod decorator. The implementation of abstract methods is left to the derived classes; they are defined but not implemented in the abstract base class.
+The following uses are made of the ABC module:
+
+ABC Definition: You can define abstract base classes (ABCs) by subclassing the ABC class using the ABC module. You enforce that any class descended from the ABC must implement these methods by declaring abstract methods in the ABC.
+
+Enforcing Interface Compliance: You can specify a standard interface that derived classes must adhere to by using abstract base classes. As long as they follow the standard interface defined by the abstract base class,
+ this assures that objects of different classes can be used interchangeably.
+
+Construction of a Framework for Polymorphism Python's abstract base classes make polymorphism easier. As long as the objects share a common class, they let you create code that can interact with objects of various classes.
+
+Q4.How can we achieve data abstraction?
+Ans=In Python, classes and objects can be used to achieve data abstraction. Here are a few techniques for data abstraction:
+
+Encapsulation: An essential idea in data abstraction is encapsulation. It entails grouping together into a single entity known as a class data and the methods that operate on that data. 
+The class encapsulates the data and provides methods to interact with that data, hiding the internal details and implementation.
+
+Q5.Can we create an instance of an abstract class? Explain your answer.
+Ans=No, we cannot create an instance of an abstract class directly in Python. Abstract classes are designed to serve as blueprints for derived classes and cannot be instantiated on their own
+for ex.
+	from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
